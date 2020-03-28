@@ -1,0 +1,19 @@
+{
+  "name": "safespeedproject",
+  "version": "1.0.0",
+  "description": "SafeSpeed project by SOFTRC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/app.js"
+  },
+  "author": "SOFTRC",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
