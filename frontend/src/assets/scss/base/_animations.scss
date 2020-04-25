@@ -1,0 +1,26 @@
+@keyframes flip-card-forward {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(180deg)
+    }
+}
+
+@keyframes flip-card-back {
+    0% {
+        transform: rotateY(180deg)
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

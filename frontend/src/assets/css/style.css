@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #666666; }
+
+main {
+  background-color: #789;
+  padding: 5rem;
+  width: 1080px;
+  margin: 0 auto; }
+
+.white-link {
+  color: white; }
+
+@keyframes flip-card-forward {
+  0% {
+    transform: rotateY(0deg); }
+  100% {
+    transform: rotateY(180deg); } }
+
+@keyframes flip-card-back {
+  0% {
+    transform: rotateY(180deg); }
+  100% {
+    transform: rotateY(0deg); } }
+
+.login-container {
+  margin: 0rem auto 0rem;
+  width: 25rem;
+  height: 21rem;
+  position: relative;
+  perspective: 90rem; }
+
+.login-card {
+  background-color: #414141;
+  font-family: 'Teko';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25rem;
+  height: 21rem;
+  box-sizing: border-box;
+  padding: 1rem 2rem 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: all 1s ease; }
+  .login-card__user {
+    transform: rotateY(0deg); }
+    .login-card__user__flipped {
+      transform: rotateY(180deg); }
+  .login-card__password {
+    transform: rotateY(-180deg); }
+    .login-card__password__flipped {
+      transform: rotateY(0deg); }
+  .login-card--logo {
+    background-image: url("../img/safespeed-logo.png");
+    background-size: cover;
+    margin: 0rem auto 0rem;
+    height: 6rem;
+    width: 90%; }
+  .login-card--header {
+    text-align: center;
+    margin: 1rem auto 0rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white; }
+  .login-card--form {
+    position: relative; }
+    .login-card--form--label {
+      display: inline-block;
+      color: #EF5136;
+      font-weight: 500;
+      font-size: 1.5rem; }
+      .login-card--form--label__error {
+        position: absolute;
+        right: 0;
+        top: 0.7rem;
+        color: #F7F7F7; }
+    .login-card--form--input {
+      display: block;
+      width: 100%;
+      font-family: 'Teko';
+      font-weight: 600;
+      font-size: 1.3rem; }
+      .login-card--form--input__error {
+        background-color: #f17070; }
+    .login-card--form--button {
+      background-color: #EF5136;
+      position: relative;
+      padding: 0.4rem;
+      font-family: 'Teko';
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      border: none;
+      margin-top: 1rem;
+      margin-bottom: 1.6rem;
+      border-radius: 2px;
+      cursor: pointer; }
+      .login-card--form--button:hover {
+        background-color: #FF7D66;
+        color: #414141; }
+      .login-card--form--button__next {
+        width: 100%; }
+      .login-card--form--button__back {
+        width: calc((100% - 1rem) / 2);
+        color: #414141;
+        background-color: #F7F7F7; }
+        .login-card--form--button__back:hover {
+          background-color: #777;
+          color: #F7F7F7; }
+      .login-card--form--button__submit {
+        left: calc(1rem - 2px);
+        width: calc((100% - 1rem) / 2); }
+    .login-card--form--register-link {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-weight: 500;
+      font-size: 1rem; }

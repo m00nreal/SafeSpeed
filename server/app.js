@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 
 const {mongoose} = require('./database');
@@ -7,14 +8,16 @@ const {mongoose} = require('./database');
 //settings
 app.set('port', process.env.PORT || 3000);
 
-//Middlewares
+//middlewares
 app.use(morgan('dev'));
+app.use(cors());
 app.use(express.json());
 
-//Routes
-app.use('/api/registers',require('./routes/registers.routes'));
-app.use('/api/users',require('./routes/users.routes'));
+//routes
+app.use('/api/usuarios', require('./routes/user.routes'));
+app.use('/api/registros', require('./routes/register.routes'));
 
+//starting server
 app.listen(app.get('port'), ()=>{
     console.log('Server on port '+app.get('port'));
 })

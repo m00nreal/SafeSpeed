@@ -1,19 +1,4 @@
-﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Inicio</a>
-        <a class="nav-item nav-link" (click)="logout()">Salir</a>
-    </div>
-</nav>
-
-<!-- main app container -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 offset-sm-3">
-                <alert></alert>
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </div>
-</div>
+<app-navigation-bar></app-navigation-bar>
+<main>
+  <router-outlet></router-outlet>
+</main>

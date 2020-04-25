@@ -1,0 +1,31 @@
+<ul class="navbar">
+  <li class="navbar--element">
+    <a routerLink="/home" class="navbar--link" routerLinkActive="navbar--link__active">
+      Inicio
+    </a>
+  </li>
+  <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+    <li class="navbar--element float-right">
+      <a routerLink="/register" class="navbar--link" routerLinkActive="navbar--link__active">
+        Registro
+      </a>
+    </li>
+    <li class="navbar--element float-right">
+      <a routerLink="/login" class="navbar--link" routerLinkActive="navbar--link__active">
+        Login
+      </a>
+    </li>
+  </ng-container>
+  <ng-template #loggedIn>
+    <li class="navbar--element">
+      <a routerLink="/incidents" class="navbar--link" routerLinkActive="navbar--link__active">
+        Incidentes
+      </a>
+    </li>
+    <li class="navbar--element float-right">
+      <a href="#" class="navbar--link" (click)="authService.logOut()">
+        LogOut
+      </a>
+    </li>
+  </ng-template>
+</ul>

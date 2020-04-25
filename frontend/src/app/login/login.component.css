@@ -1,0 +1,42 @@
+.login-container {
+    background-color: black;
+    padding: 30px;
+    position: relative;
+}
+
+.login-container label{
+    display: block;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.login-container input{
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.login-container button{
+    background-color: #EF5136;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.login-container button:hover{
+    background-color: rgb(248, 106, 81);
+}
+
+.login-container .login-icon{
+    position: relative;
+    height: 153px;
+    left: 50%;
+    transform: translateX(-50%);
+}
