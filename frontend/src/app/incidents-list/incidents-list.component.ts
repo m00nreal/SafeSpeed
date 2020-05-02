@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistroService } from "../services/registro.service";
+import { Registro } from "../models/registro";
 
 @Component({
   selector: 'app-incidents-list',
@@ -8,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class IncidentsListComponent implements OnInit {
   modalId: number = -1;
 
-  constructor() { }
+  constructor(
+    public registroService : RegistroService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getRegisters();
+  }
+
+  getRegisters () {
+    this.registroService.getRegisters()
+      .subscribe(res => {
+        this.registroService.regs = res as Registro[];
+      },
+      err => console.log(err)
+      )
   }
 
 }

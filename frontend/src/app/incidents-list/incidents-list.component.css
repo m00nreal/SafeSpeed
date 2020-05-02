@@ -1,0 +1,43 @@
+.incidentes-title{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0;
+}
+
+.incidentes-table{
+    position: relative;
+    width: 100%;
+    border-spacing: 0;
+    overflow-x: auto;
+}
+
+.incidentes-table tr td:last-child{
+    width: 1%;
+    white-space: nowrap;
+}
+
+.incidentes-table .incident-image{
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.incidentes-table thead tr{
+    background-color: rgb(185, 185, 185);
+}
+
+.incidentes-table thead tr th{
+    padding: 15px;
+    background-color: #EF5136;
+    color: white;
+}
+
+.incidentes-table tbody tr td {
+    text-align: center;
+}
+
+.incidentes-table tbody tr:nth-child(even){
+    background-color: white;
+}

@@ -1,9 +1,10 @@
 const Registro = require('../models/register');
 const user = require('../models/user');
+const fileEncoder = require('../helpers/fileEncoder');
 const registerCtrl = {};
 
 registerCtrl.getRegisters = async (req,res) => {
-    var userId = req.body.id;
+    var userId = req.userId;
     console.log(userId);
     user.findById(userId)
         .then((result) => {
@@ -29,6 +30,10 @@ registerCtrl.getRegister = async (req,res) => {
 }
 
 registerCtrl.createRegister = async (req,res) => {
+    //create Image
+    var {image} = req.body;
+    delete req.body.image;
+    fileEncoder.base64_decode(image, req.body.imageName);
     var reg = new Registro(req.body);
     reg.save()
         .then(() => {
@@ -51,11 +56,11 @@ registerCtrl.deleteRegister = async (req,res) => {
 
 registerCtrl.editRegister = async (req,res) => {
     var {id} = req.params;
-    var usr = {
+    var reg = {
         key: req.params.key,
         plates: req.params.plates
     };
-    Registro.findByIdAndUpdate(id, {$set : usr}, {new: true})
+    Registro.findByIdAndUpdate(id, {$set : reg}, {new: true})
         .then(()=>{
             res.json({"status" : "Registro actualizado."});
         })

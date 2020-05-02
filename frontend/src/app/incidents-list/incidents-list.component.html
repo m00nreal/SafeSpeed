@@ -1,11 +1,22 @@
-<!-- <h2>Incidentes reportados</h2>
-<table class="table">
-  <tr>
-    <th>Punto de control</th>
-    <th>Fecha</th>
-    <th>Velocidad</th>
-    <th>Placas</th>
-    <th>Imagen</th>
-  </tr>
-</table> -->
-Esta sección está en desarrollo
+<h2 class="incidentes-title">Incidentes reportados</h2>
+<table class="incidentes-table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Punto de control</th>
+      <th>Tipo de Incidente</th>
+      <th>Velocidad</th>
+      <th>Placas</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let registro of registroService.regs">
+      <td>{{registro.date|date:'medium':'UTC'}}</td>
+      <td>{{registro.pointName}}</td>
+      <td>{{registro.type}}</td>
+      <td>{{registro.speed}} km/h</td>
+      <td>{{registro.plates}}</td>
+      <td><img class="incident-image" src="assets/img/registros/{{registro.imageName}}"></td>
+    </tr>
+  </tbody>
