@@ -1,0 +1,19 @@
+.home {
+  background-color: $color-gray-light;
+
+  margin: 0 auto;
+
+  &--logo {
+    background-color: black;
+    margin: 0 auto;
+    background-image: url('./assets/img/safespeed-logo.png');
+    background-size: cover;
+    width: 100%;
+    height: 18rem;
+  }
+
+  &--description {
+    font-family: 'Lato';
+    padding: 2rem;
+  }
+}

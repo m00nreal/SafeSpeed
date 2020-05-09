@@ -1,0 +1,153 @@
+.login-container {
+    margin: 0rem auto 0rem;
+    width: $login-card-width;
+    height: $login-card-height;
+    position: relative;
+    perspective: 90rem;
+}
+
+.login-card {
+    background-color: $color-gray-dark;
+    font-family: 'Teko';
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: $login-card-width;
+    height: $login-card-height;
+    box-sizing: border-box;
+    padding: 1rem 2rem 1rem;
+    margin: 0 auto;
+
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: all 1s ease;
+
+    &__user {
+        transform: rotateY(0deg);
+
+        &__flipped {
+            transform: rotateY(-180deg);
+        }
+    }
+
+    &__password {
+        transform: rotateY(180deg);
+
+        &__flipped {
+            transform: rotateY(0deg);
+        }
+    }
+
+    &--logo {
+        background-image: url("./assets/img/safespeed-logo.png");
+        background-size: cover;
+        margin: 0rem auto 0rem;
+        height: 6rem;
+        width: 90%;
+
+        &:hover {
+          cursor: pointer;
+        }
+    }
+
+    &--header {
+        text-align: center;
+        margin: 1rem auto 0rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    &--form {
+        position: absolute;
+
+        $form-horizontal-margin: 3rem;
+        width: calc(100% - 2 * #{ $form-horizontal-margin } );
+        left: $form-horizontal-margin;
+
+        &__user {
+            bottom: 2rem;
+        }
+
+        &__password {
+            bottom: 1rem;
+        }
+
+        &--register-link {
+            position: absolute;
+            right: 0;
+            bottom: -0.4rem;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        &--label {
+            display: inline-block;
+            color: $color-secondary-medium;
+            font-weight: 500;
+            font-size: 1.5rem;
+
+            &__error {
+                position: absolute;
+                right: 0;
+                top: 0.7rem;
+                color: $color-gray-light;
+            }
+        }
+
+        &--input {
+            display: block;
+            width: 100%;
+            font-family: 'Teko';
+            font-weight: 600;
+            font-size: 1.3rem;
+
+
+            &__error {
+                background-color: rgb(241, 112, 112);
+            }
+        }
+
+        &--button {
+            background-color: $color-secondary-medium;
+            position: relative;
+            padding: 0.4rem;
+            font-family: 'Teko';
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            border: none;
+            margin-top: 1rem;
+            margin-bottom: 1.6rem;
+            border-radius: 2px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-secondary-light;
+                color: $color-gray-dark;
+            }
+
+            &__next {
+                width: 100%;
+            }
+
+            &__back {
+                width: calc((100% - #{ $login-card-button-gutter }) / 2 );
+                color: $color-gray-dark;
+                background-color: $color-gray-light;
+
+                &:hover {
+                    background-color: #777;
+                    color: $color-gray-light;
+                }
+            }
+
+            &__submit {
+                left: calc(#{$login-card-button-gutter} - 2px);
+                width: calc((100% - #{ $login-card-button-gutter }) / 2 );
+            }
+        }
+    }
+}

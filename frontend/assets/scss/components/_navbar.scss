@@ -1,0 +1,29 @@
+.navbar {
+  list-style-type: none;
+  width: $page-width;
+  margin: 0rem auto 0 auto;
+  padding: 0;
+  background-color: $color-gray-dark;
+  overflow: hidden;
+
+  &--element {
+    float: left;
+  }
+
+  &--link {
+    display: block;
+    background-color: $color-gray-dark;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font: bold 1.3rem 'Teko';
+
+    &__active {
+      background-color: $color-secondary-medium !important;
+    }
+
+    &:hover:not(.navbar--link__active) {
+      background-color: $color-gray-medium-light;
+    }
+  }
+}
