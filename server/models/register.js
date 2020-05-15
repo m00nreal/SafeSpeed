@@ -6,7 +6,7 @@ const registerSchema = new Schema({
     type: {type: String, required: true},
     key: {type: String, required: true},
     speed: {type: Number, required: true},
-    date: {type: Date, required: true},//yyyy-mm-ddTHH:MM:ss
+    date: {type: Date, required: false},//yyyy-mm-ddTHH:MM:ss
     image: {type: String, required: true},
     plates: {type: String, required: false}
 });
